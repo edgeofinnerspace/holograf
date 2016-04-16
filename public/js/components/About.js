@@ -16,7 +16,7 @@ module.exports = React.createClass({
       <div className='about'>
         <h1>Inspiration for Holograf</h1>
         <p className='inspiration'>All of modern programming is handicapped by an unspoken assumption: the programmer has only a narrow view into the workings of the machine, as if looking into a room through a keyhole. Holograf displays the clockwork of your program as an animated mechanism in 3D space, giving the programmer eyes to see her work, as it runs, completely changing the way developers create applications.
-        </p> 
+        </p>
 
         <h1>The Tech Stack</h1>
         <div className='tech-stack'>
@@ -30,7 +30,7 @@ module.exports = React.createClass({
             <TechStackItem name="Gulp.js" image="img/gulp.png" link="http://gulpjs.com/" />
             <TechStackItem name="Jasmine" image="img/jasmine.png" link="http://jasmine.github.io/" />
           </div>
-        </ div>
+        </div>
 
         <h1>The Holograf Team</h1>
         <div className='team'>
@@ -43,4 +43,3 @@ module.exports = React.createClass({
     );
   }
 });
-
