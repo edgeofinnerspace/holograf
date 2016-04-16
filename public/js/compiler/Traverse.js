@@ -6,7 +6,6 @@ var Traverse = function (processes) {
   }
 
   this.start = traverse.start;
-
 };
 
 var traverse = {};
@@ -187,7 +186,7 @@ traverse.conditional = function (node, parent, origin, index) {
   if (node.consequent) {
     if (node.consequent.body) {
       traverse.node(node.consequent, node, 'consequent', index);
-    } else { 
+    } else {
       node.consequent = {
         body: [node.consequent],
         loc: node.loc,
@@ -202,7 +201,7 @@ traverse.conditional = function (node, parent, origin, index) {
     } else if (node.alternate.consequent) {
       traverse.node(node.alternate, node, 'alternate', index);
     }
-    else { 
+    else {
       node.alternate = {
         body: [node.alternate],
         loc: node.loc,
@@ -234,7 +233,7 @@ traverse.loop = function (node, parent, origin, index) {
     traverse.body(node.body.body, node, 'body', index);
   } else {
     traverse.body(node.body, node, 'body', index);
-  } 
+  }
 }
 
 traverse.function = function (node, parent, origin, index) {
@@ -264,41 +263,5 @@ var isNotInjectedFunction = function (node) {
     return true;
   }
 }
-
-process.defaultProcess = function (node, parent, origin, index) {
-  return node;
-}
-
-process.setDefaults = function () {
-  for (var i = 0; i < process.processNames.length; i++) {
-    var processName = process.processNames[i];
-    process[processName] = process.defaultProcess;
-  }
-}
-
-process.processNames = [
-  'node',
-  'program',
-  'programBody',
-  'blockStatement',
-  'conditionalExpression',
-  'callExpression',
-  'memberExpression',
-  'whileStatement',
-  'doWhileStatement',
-  'forStatement',
-  'ifStatement',
-  'arrayExpression',
-  'objectExpression',
-  'expressionStatement',
-  'binaryExpression',
-  'returnStatement',
-  'functionDeclaration',
-  'functionExpression',
-  'variableDeclaration',
-  'updateExpression',
-  'assignmentExpression',
-  'logicalExpression'
-]
 
 module.exports = Traverse;
