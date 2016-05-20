@@ -42,7 +42,7 @@ module.exports = React.createClass({
 
     return (
       <div className="appContainer" >
-        <div className="navbar-brand">HOLOGRAF</div>
+        <div className="navbar-brand">HOLOGRAF<sup>α</sup></div>
         <TabbedArea defaultActiveKey={1} activeKey={this.props.selectedTab} onSelect={this.handleSelect}>
           <TabPane className="tab1" eventKey={1} tab="Code">
             <CodeEditor {...this.props} />
@@ -58,7 +58,7 @@ module.exports = React.createClass({
           </TabPane>
         </TabbedArea>
       </div>
-      
+
     );
   },
 
@@ -73,10 +73,9 @@ module.exports = React.createClass({
         <Loading isLoading={this.props.isLoading} />
       );
     } else {
-      return <span/>;    
+      return <span/>;
     }
 
 
   }
 });
-

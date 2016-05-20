@@ -49,7 +49,6 @@ module.exports = React.createClass({
         <Button className="visualButton" bsStyle="primary" onClick={this.previous} >Previous</Button>
         <Button className="visualButton" bsStyle="primary" onClick={this.next} >Next</Button>
         <Button className="visualButton" bsStyle="primary" onClick={this.returnCamera} >Return</Button>
-        <Col xs={6} md={4}><Input readOnly type="text" value={this.props.shareUrl} buttonBefore={<Button onClick={this.save} >Share</Button>} /></Col>
       </div>
     );
   }

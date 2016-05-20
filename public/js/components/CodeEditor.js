@@ -40,7 +40,7 @@ module.exports = React.createClass({
     history.go(0);
   },
 
-// bsStyle options: ["default","primary","success","info","warning","danger","link","inline","tabs","pills"]. 
+// bsStyle options: ["default","primary","success","info","warning","danger","link","inline","tabs","pills"].
   render: function () {
 
     // if (this.props.selectedTab === 2 && !this.props.compiledStatus && theatre.firstRender) {
@@ -49,7 +49,7 @@ module.exports = React.createClass({
     // }
 
     // dynamic classes for the buttons
-    var cx = React.addons.classSet; 
+    var cx = React.addons.classSet;
     var compileClasses = cx({
       'pull-right': true,
       'codeButton': true  //,
@@ -82,10 +82,8 @@ module.exports = React.createClass({
         <Panel>
           <Button bsStyle="primary" onClick={this.compile} className={compileClasses} >Visualize</Button>
           <Button bsStyle="danger" onClick={this.refresh} className={resetClasses} >Reset Code</Button>
-          <Col xs={6} md={4}><Input readOnly type="text" value={this.props.shareUrl} buttonBefore={<Button onClick={this.save} className={shareClasses}>Share</Button>} /></Col>
         </Panel>
       </div>
     );
   }
 });
-
