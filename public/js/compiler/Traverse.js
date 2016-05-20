@@ -243,10 +243,6 @@ traverse.function = function (node, parent, origin, index) {
   traverse.body(node.body.body, node, 'body', index);
 }
 
-
-
-
-
 var Index = function (parent) {
   this.position = 0;
   this.advance = function (n) {
@@ -263,5 +259,41 @@ var isNotInjectedFunction = function (node) {
     return true;
   }
 }
+
+process.defaultProcess = function (node, parent, origin, index) {
+  return node;
+}
+
+process.setDefaults = function () {
+  for (var i = 0; i < process.processNames.length; i++) {
+    var processName = process.processNames[i];
+    process[processName] = process.defaultProcess;
+  }
+}
+
+process.processNames = [
+  'node',
+  'program',
+  'programBody',
+  'blockStatement',
+  'conditionalExpression',
+  'callExpression',
+  'memberExpression',
+  'whileStatement',
+  'doWhileStatement',
+  'forStatement',
+  'ifStatement',
+  'arrayExpression',
+  'objectExpression',
+  'expressionStatement',
+  'binaryExpression',
+  'returnStatement',
+  'functionDeclaration',
+  'functionExpression',
+  'variableDeclaration',
+  'updateExpression',
+  'assignmentExpression',
+  'logicalExpression'
+]
 
 module.exports = Traverse;
