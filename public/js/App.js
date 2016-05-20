@@ -48,7 +48,7 @@ var App = React.createClass({
     );
   },
 
-  //Event handler for 'change' events coming from the AppStore. 
+  //Event handler for 'change' events coming from the AppStore.
   //having an _onChange function here prevents an error from popping up in the console, though it doesn't impact functionality currently
   _onChange: function() {
     this.setState(this.getAppState());
